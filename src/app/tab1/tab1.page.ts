@@ -51,6 +51,7 @@ test: string[];
     listado.length = 0;
     }
 
+    
     borrarListadoExp(){
       console.log('borrando listado de usuarios');
       let listado = this.item;

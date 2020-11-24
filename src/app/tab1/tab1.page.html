@@ -49,7 +49,7 @@
   <h3>Selecciona una experiencia</h3>
   <ion-item>
     <ion-label>experiencia:</ion-label> 
-    <ion-select  [(ngModel)]="idExperiencia" (ionChange)="mostrarExperienciaById(exp)">
+    <ion-select  [(ngModel)]="idExperiencia" (ionChange)="mostrarExperienciaById()">
       <!--<ion-select-option select  >Selecciona una experiencia</ion-select-option>-->
       <ion-select-option *ngFor="let experiencia of experiencias" [value]= 'experiencia.id'>{{ experiencia.nombre }}</ion-select-option>
     </ion-select>
