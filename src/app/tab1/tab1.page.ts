@@ -16,7 +16,7 @@ export class Tab1Page {
 
   //variables seleccion
  item: string[];
-test: string[];
+ test: string[];
  
 
 

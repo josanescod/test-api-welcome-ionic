@@ -16,61 +16,55 @@
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>-->
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-     <h2>test API WelcomeCityapp</h2>
-    </ion-title>
-  </ion-toolbar>
- </ion-header>
- 
 
- <ion-content>
-  <h3>Usuarios:</h3> 
-  <ion-list>
-    <ion-item *ngFor="let usuario of usuarios">
-     <!--<ion-avatar slot="start">
+<!-- Jose Test -->
+
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <h2>test API WelcomeCityapp</h2>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <h3>Usuarios:</h3>
+    <ion-list>
+        <ion-item *ngFor="let usuario of usuarios">
+            <!--<ion-avatar slot="start">
         <img [src]="usuario.picture.medium">
       </ion-avatar>-->
-      
-      <ion-label>
-      
-      <h2>{{ usuario.id }}</h2>
-      <h2>{{ usuario.nombre }}</h2>
-      <p>{{ usuario.password }}</p>
-      <!--<p>{{ usuario.password }}</p>-->
-    </ion-label>
+
+            <ion-label>
+
+                <h2>{{ usuario.id }}</h2>
+                <h2>{{ usuario.nombre }}</h2>
+                <p>{{ usuario.password }}</p>
+                <!--<p>{{ usuario.password }}</p>-->
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-button (click)="mostrarUsuarios()">Cargar Usuarios</ion-button>
+    <ion-button color="danger" (click)="borrarListadoUsuarios()">Borrar</ion-button>
+
+    <h3>Selecciona una experiencia</h3>
+    <ion-item>
+        <ion-label>experiencia:</ion-label>
+        <ion-select [(ngModel)]="idExperiencia" (ionChange)="mostrarExperienciaById()">
+            <!--<ion-select-option select  >Selecciona una experiencia</ion-select-option>-->
+            <ion-select-option *ngFor="let experiencia of experiencias" [value]='experiencia.id'>{{ experiencia.nombre }}</ion-select-option>
+        </ion-select>
     </ion-item>
-  </ion-list>
 
-  <ion-button (click) = "mostrarUsuarios()">Cargar Usuarios</ion-button>
-  <ion-button  color="danger" (click) = "borrarListadoUsuarios()">Borrar</ion-button>
+    <ion-item *ngFor="let i of item">
 
-  <h3>Selecciona una experiencia</h3>
-  <ion-item>
-    <ion-label>experiencia:</ion-label> 
-    <ion-select  [(ngModel)]="idExperiencia" (ionChange)="mostrarExperienciaById()">
-      <!--<ion-select-option select  >Selecciona una experiencia</ion-select-option>-->
-      <ion-select-option *ngFor="let experiencia of experiencias" [value]= 'experiencia.id'>{{ experiencia.nombre }}</ion-select-option>
-    </ion-select>
-  </ion-item>
+        <ion-label>
+            <h2>{{ i }}</h2>
+        </ion-label>
 
-<ion-item *ngFor="let i of item">
-  
-   <ion-label> 
-  <h2>{{ i }}</h2>  
-  </ion-label>
-  
-</ion-item>
-<ion-button  color="danger" (click) = "borrarListadoExp()">Borrar Experiencias</ion-button>
- 
-  
-  
+    </ion-item>
+    <ion-button color="danger" (click)="borrarListadoExp()">Borrar Experiencias</ion-button>
 
-  
 </ion-content>
-
-  
-   
-  
-
