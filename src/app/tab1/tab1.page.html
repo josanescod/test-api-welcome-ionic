@@ -46,8 +46,28 @@
         </ion-item>
     </ion-list>
 
-    <ion-button (click)="mostrarUsuarios()">Cargar Usuarios</ion-button>
+    <ion-button (click)="mostrarUsuarios()">Mostrar Usuarios</ion-button>
     <ion-button color="danger" (click)="borrarListadoUsuarios()">Borrar</ion-button>
+
+    <h3>Experiencias:</h3>
+    <ion-list>
+        <ion-item *ngFor="let listexp of listaExperiencia">
+            <!--<ion-avatar slot="start">
+        <img [src]="usuario.picture.medium">
+      </ion-avatar>-->
+
+            <ion-label>
+
+                <h2>{{ listexp.id }}</h2>
+                <h2>{{ listexp.nombre }}</h2>
+                <p>{{ listexp.descripcion }}</p>
+                <!--<p>{{ usuario.password }}</p>-->
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-button (click)="mostrarExperiencias()">Mostrar Experiencias</ion-button>
+    <ion-button color="danger" (click)="borrarListadoExperiencias()">Borrar</ion-button>
 
     <h3>Selecciona una experiencia</h3>
     <ion-item>

@@ -5,28 +5,13 @@ on: push
 
 jobs:
 
-  super-lint:
-    name: Lint code base
+  deploy2github:
+    name: deploy2github
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
      
-      # ionic
-      - name: Use coturiv/setup-ionic
-        env:
-          URL: ${{ secrets.URL }} 
-        uses: coturiv/setup-ionic@v1
-        with:
-          cordova-version: 8
-      - name: Build
-        run: |
-          ionic build --prod  -- --base-href ${{ secrets.URL }} 
-          
-      - name: Deploy  
-         
-        run: |
-          npm install angular-cli-github-pages
-          npx angular-cli-ghpages --dir=www
-
+      
 
 
           

@@ -11,15 +11,17 @@ export class HttpService {
 
   loadUsers() {
     return this.http
-    .get('https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/usuarios');
-    
-
-    
+    .get('https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/usuarios');    
   }
 
   loadExperiencias(){
     return this.http
   .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias`)
+  }
+
+  loadServicios(){
+    return this.http
+  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/servicios`)
   }
 
   loadExperienciaById(id) {

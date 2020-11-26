@@ -11,7 +11,7 @@ export class Tab1Page {
 
   usuarios: any[];
   experiencias: any[];
-  experiencia: any[];
+  listaExperiencia: any[];
   idExperiencia: any[];
 
   //variables seleccion
@@ -30,29 +30,41 @@ export class Tab1Page {
     console.log('pulsado el boton de mostrar usuarios')
     this.http.loadUsers().subscribe(
       (res: any)=>{
-        console.log(res)
-       
+        console.log(res)       
         this.usuarios = res;
-
-
-
-
-
       },(error)=>{
         console.error(error);
       }
     );
-
-
   }
+
+  mostrarExperiencias(){
+    console.log('pulsado el boton de mostrar experiencias')
+    this.http.loadExperiencias().subscribe(
+      (res: any)=>{
+        console.log(res)       
+        this.listaExperiencia = res;
+      },(error)=>{
+        console.error(error);
+      }
+    );
+  }
+
+
   borrarListadoUsuarios(){
     console.log('borrando listado de usuarios');
     let listado = this.usuarios;
     listado.length = 0;
     }
 
+  borrarListadoExperiencias(){
+    console.log('borrando listado de experiencias');
+    let listado = this.listaExperiencia;
+    listado.length = 0;
+  }  
+
     
-    borrarListadoExp(){
+  borrarListadoExp(){
       console.log('borrando listado de usuarios');
       let listado = this.item;
       listado.length = 0;
