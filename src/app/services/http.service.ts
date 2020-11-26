@@ -26,11 +26,14 @@ export class HttpService {
 
   loadExperienciaById(id) {
   return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias/${id}`);
-  
-
-  
+  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias/${id}`);  
 }
 
+  //Imagenes random proporcionadas por una api-rest publica solo para pruebas
+  loadImagenesRandom(){ 
+    return this.http
+  .get(`https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list?page=2&limit=5`)
+
+}
 
 }

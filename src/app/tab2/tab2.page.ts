@@ -13,6 +13,9 @@ export class Tab2Page {
   experiencia: any[];
   idExperiencia: any[];
 
+  //prueba imagenes random
+  imagenes: any[];
+
   //variables seleccion
  item: string[];
  test: string[];
@@ -73,5 +76,24 @@ export class Tab2Page {
 
 
   }
+
+  mostrarImagenesRandom(){
+    this.http.loadImagenesRandom().subscribe(
+      (res: any)=>{
+        console.log(res)
+        this.imagenes = res;
+
+      },(error)=>{
+        console.error(error);
+      }
+    );
+
+  }
+
+  borrarImagenesRandom(){
+    console.log('borrando imagenes');
+    let listado = this.imagenes;
+    listado.length = 0;
+    }
 
 }
