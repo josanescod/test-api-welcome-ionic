@@ -10,11 +10,12 @@ export class Tab2Page {
 
 
   experiencias: any[];
-  experiencia: any[];
   idExperiencia: any[];
 
   //prueba imagenes random
   imagenes: any[];
+  expimagen: string [];
+  
 
   //variables seleccion
  item: string[];
@@ -66,14 +67,44 @@ export class Tab2Page {
     
     this.http.loadExperiencias().subscribe(
       (res: any)=>{
-        console.log(res)
-        this.experiencias = res;
+        //console.log(res)
+        this.expimagen = res;
+
+        for (let e in this.expimagen) {
+          //console.log(this.experiencias[e])
+         
+          console.log(this.expimagen[e])
+          
+         // this.expimagen[e].push(this.experiencias[e]);
+        }
 
       },(error)=>{
         console.error(error);
       }
     );
 
+    this.http.loadImagenesRandom().subscribe(
+      (res: any)=>{
+        //console.log(res)
+        this.imagenes = res;
+        for(let e in this.imagenes){
+          console.log(this.imagenes[e]['download_url'])
+          //console.log(this.expimagen[e]['nombre'])
+          this.expimagen[e]['download_url'] = this.imagenes[e]['download_url']
+          console.log(this.expimagen[e])
+        }
+
+      },(error)=>{
+        console.error(error);
+      }
+    );
+
+    
+
+    for (let e in this.imagenes) {
+      //this.expimagen[e].download_url = this.imagenes[e]['download_url'];
+    }
+    //console.log('nuevo array con imagenes: ',this.expimagen)
 
   }
 
@@ -90,10 +121,10 @@ export class Tab2Page {
 
   }
 
-  borrarImagenesRandom(){
+ /* borrarImagenesRandom(){
     console.log('borrando imagenes');
     let listado = this.imagenes;
     listado.length = 0;
-    }
+    }*/
 
 }

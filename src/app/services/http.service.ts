@@ -32,7 +32,7 @@ export class HttpService {
   //Imagenes random proporcionadas por una api-rest publica solo para pruebas
   loadImagenesRandom(){ 
     return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list?page=2&limit=5`)
+  .get(`https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list?page=2&limit=10`)
 
 }
 
