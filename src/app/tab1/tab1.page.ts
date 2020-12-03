@@ -22,7 +22,7 @@ export class Tab1Page {
 
   constructor(private http: HttpService) {
     //console.log('cargando pagina')
-    this.cargarListadoExperiencias()
+    //this.cargarListadoExperiencias()
   }
  
 

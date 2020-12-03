@@ -11,29 +11,62 @@ export class HttpService {
 
   loadUsers() {
     return this.http
-    .get('https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/usuarios');    
+      .get('https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/usuarios');
   }
 
-  loadExperiencias(){
+  loadComentarios() {
     return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias`)
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/comentarios`)
   }
 
-  loadServicios(){
+  loadEmails() {
     return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/servicios`)
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/emails`)
+  }
+
+  loadExperiencias() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias`)
   }
 
   loadExperienciaById(id) {
-  return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias/${id}`);  
-}
-
-  //Imagenes random proporcionadas por una api-rest publica solo para pruebas
-  loadImagenesRandom(){ 
     return this.http
-  .get(`https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list?page=2&limit=10`)
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/experiencias/${id}`);
+  }
 
-}
+  loadFotos() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/fotos`)
+  }
+
+  loadHoteles() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/hoteles`)
+  }
+
+  loadOfertas() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/ofertas`)
+  }
+
+  loadPerfiles() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/perfiles`)
+  }
+
+  loadRoles() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/roles`)
+  }
+
+  loadServicios() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/servicios`)
+  }
+
+  loadTipos() {
+    return this.http
+      .get(`https://cors-anywhere.herokuapp.com/https://welcomcity.herokuapp.com/test/tipos`)
+  }
 
 }

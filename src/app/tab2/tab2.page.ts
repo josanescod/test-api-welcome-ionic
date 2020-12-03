@@ -25,7 +25,7 @@ export class Tab2Page {
 
   constructor(private http: HttpService) {
     //console.log('cargando pagina')
-    this.cargarListadoExperiencias()
+    //this.cargarListadoExperiencias()
   }
  
 
@@ -63,7 +63,7 @@ export class Tab2Page {
 
   }
 
-  cargarListadoExperiencias(){
+ /* cargarListadoExperiencias(){
     
     this.http.loadExperiencias().subscribe(
       (res: any)=>{
